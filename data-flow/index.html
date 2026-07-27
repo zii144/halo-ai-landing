@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data flow — Halo AI</title>
+    <meta name="description" content="Where Halo AI information goes — for users and store reviewers." />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="stylesheet" crossorigin href="/assets/site-fXkASwmi.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../icon.png" alt="" />Halo AI</a>
+        <nav class="site-nav">
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a href="../terms/">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="prose">
+      <h1>Data flow</h1>
+      <p class="meta">Plain-language path for users and App Store / Play reviewers.</p>
+
+      <pre>You type a message
+        │
+        ▼
+On-device app (Halo AI)
+  • Saves the turn locally (SQLite / web snapshot)
+  • Does NOT hold an Anthropic API key
+        │
+        │  HTTPS POST /v1/turns (streaming)
+        ▼
+Agent proxy (developer-operated)
+  • Holds the Anthropic key server-side
+  • Forwards the turn to Claude
+        │
+        ▼
+Claude model reply (streamed back)
+        │
+        ▼
+On-device app
+  • Shows the reply
+  • Saves it in local conversation history</pre>
+
+      <p>
+        <strong>What never leaves by default:</strong> full conversation
+        archives as a bulk export, analytics of chat content, or any
+        user-entered API key (there is none).
+      </p>
+      <p>
+        <strong>Voice / vision:</strong> not shipping in v1; those routes are
+        flag-gated stubs.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 Zii Wong</span>
+        <nav>
+          <a href="../">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

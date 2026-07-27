@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Halo AI</title>
+    <meta name="description" content="Privacy Policy for Halo AI: local-first chats, proxy-backed Claude replies, no on-device API key." />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="stylesheet" crossorigin href="/assets/site-fXkASwmi.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../icon.png" alt="" />Halo AI</a>
+        <nav class="site-nav">
+          <a href="../support/">Support</a>
+          <a href="../terms/">Terms</a>
+          <a href="../data-flow/">Data flow</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="prose">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective date: July 27, 2026 · Applies to Halo AI v1.0</p>
+
+      <div class="note">
+        <strong>Summary:</strong> Conversations are stored on your device. When
+        you send a message, that turn goes to our agent proxy so Claude can
+        reply. The Anthropic API key never lives in the app. Analytics is off
+        by default and never includes chat content.
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>
+        Halo AI is developed by Zii Wong ("we," "us"). Questions:
+        <a href="mailto:quickpolymath@gmail.com">quickpolymath@gmail.com</a>.
+      </p>
+
+      <h2>2. Data stored on your device</h2>
+      <ul>
+        <li><strong>Conversations</strong> — messages and replies in on-device SQLite (native) or a local snapshot store (web).</li>
+        <li><strong>Preferences</strong> — interface language and related settings.</li>
+        <li><strong>Debug analytics buffer</strong> — only when analytics debug mode is on; in-memory, privacy-filtered, not sent to us by default.</li>
+      </ul>
+      <p>Delete conversations or wipe all local data from Settings. Uninstalling removes local data, subject to platform behavior.</p>
+
+      <h2>3. Data processed when you chat</h2>
+      <p>
+        Sending a message posts that turn (and needed context) to our
+        <strong>agent proxy</strong>. The proxy holds the Anthropic key and
+        forwards the request to Claude. The reply streams back and is saved
+        locally. We do not sell chat content.
+      </p>
+
+      <h2>4. What we do not collect by default</h2>
+      <ul>
+        <li>No account or sign-in</li>
+        <li>No Anthropic API key on your device</li>
+        <li>No analytics of chat content</li>
+        <li>No bulk export that ships your history off-device</li>
+      </ul>
+
+      <h2>5. Permissions</h2>
+      <p>
+        v1 text chat does not require microphone, camera, or contacts.
+        Future voice/vision modes are not shipping in this release.
+      </p>
+
+      <h2>6. Children</h2>
+      <p>Halo AI is not directed at children under 13.</p>
+
+      <h2>7. Changes &amp; contact</h2>
+      <p>
+        We may update this policy; the effective date will change when we do.
+        Contact:
+        <a href="mailto:quickpolymath@gmail.com">quickpolymath@gmail.com</a>.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 Zii Wong</span>
+        <nav>
+          <a href="../">Home</a>
+          <a href="../support/">Support</a>
+          <a href="../terms/">Terms</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
